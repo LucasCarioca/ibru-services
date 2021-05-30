@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @Data
 @Entity(name = "brews")
+@Table(name="brews")
 public class Brew {
     @Id
     @GeneratedValue(generator = "system-uuid")

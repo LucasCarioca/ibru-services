@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Setter
 @Getter
 @Data
-@Entity(name="user")
+@Entity(name="users")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(generator = "system-uuid")

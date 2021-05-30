@@ -13,6 +13,7 @@ import java.util.Date;
 @Getter
 @Data
 @Entity(name="readings")
+@Table(name="readings")
 public class Reading {
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -20,11 +21,14 @@ public class Reading {
     private String id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="brew_id", referencedColumnName = "id")
     @JsonIgnore
     private Brew brew;
 
     private Double gravity;
     private Date date;
+    @Column(name="starting_gravity")
     private Boolean start = false;
+    @Column(name="ending_gravity")
     private Boolean end = false;
 }
